@@ -1,0 +1,20 @@
+{
+  "name": "pdfextract",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "René Gern",
+  "license": "MIT",
+  "description": "webservice for extracting data from PDF forms",
+  "dependencies": {
+    "express": "^4.21.1",
+    "js-yaml": "^4.1.0",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "pdf-lib": "^1.17.1",
+    "swagger-ui-express": "^5.0.1"
+  }
+}

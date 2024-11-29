@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: PDF Form Field Extractor API
+  version: v1
+
+servers:
+  - url: http://<YOUR_URL>:3002 # Replace with your actual server URL, including the subdirectory if applicable
+
+paths:
+  /extract-form-fields: 
+    post:
+      summary: Extract form fields from a PDF file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                pdfFile:
+                  type: string
+                  format: binary
+                  description: 1  The PDF file to extract form fields from
+      responses:
+        '200':
+          description: Successfully extracted form fields
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  filename:
+                    type: string
+                    description: The name of the uploaded PDF file
+                  creationDate:
+                    type: string
+                    format: date-time
+                    description: The creation date of the PDF file
+                  fields:
+                    type: array
+                    description: An array of extracted form fields
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: The name of the form field
+                        value:
+                          type: string
+                          description: The value of the form field
+                        type:
+                          type: string
+                          description: The type of the form field (e.g., text, checkbox, radio)
+        '500':
+          description: Internal server error
