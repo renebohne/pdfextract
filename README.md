@@ -1,4 +1,4 @@
-# PDF Form Field Extractor
+# pdfextract
 
 This project provides a Node.js web service with a REST API to extract form field data from PDF files. 
 
@@ -20,7 +20,7 @@ The project also includes a frontend webpage (`index.html`) with a file upload f
 ### Clone the repository
 
 ```bash
-git clone [invalid URL removed]
+git clone https://github.com/renebohne/pdfextract
 ```
 
 ### Install dependencies
